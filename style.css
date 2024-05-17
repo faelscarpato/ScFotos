@@ -47,7 +47,9 @@ header{
 }
 .branding p{
   text-align:center;
-  font-size:14px; line-height:150%;
+  font-size:14px;
+font-weight: 600; 
+line-height:150%;
   color:#FFC501;
   margin:0 0 20px 0;
 }
