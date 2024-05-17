@@ -216,12 +216,12 @@ footer{
   align-items:center;
   justify-content:center;
   flex-wrap:wrap;
-  font-size: 13px;
+  font-size: 18px;
   color:#FFC501 ;
-  margin:0 0 10px 0;
+  margin:0 0 15px 0;
 }
 .social a{
-  margin-left:10px;
+  margin-left:15px;
   color:#FFC501;
   text-decoration:none;
 }
