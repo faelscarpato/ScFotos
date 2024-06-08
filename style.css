@@ -326,3 +326,29 @@ canvas {
   height: 100%;
 }
 
+.carousel-container {
+  position: relative;
+  width: 100%; /* Largura total para responsividade */
+  overflow: hidden;
+  padding-top: 20px ;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%; /* Cada slide ocupa 100% da largura */
+  height: 600px; /* Ajuste a altura conforme necessário */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Estilos opcionais para responsividade em telas menores */
+@media (max-width: 768px) { 
+  .slide {
+    height: 400px; /* Altura menor para telas menores */
+  }
+}
+
