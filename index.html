@@ -668,6 +668,29 @@
 			   
 			</main>
 
+   <script>
+                       let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
+function updateCarousel() {
+  const carousel = document.querySelector('.carousel');
+  const slideWidth = slides[0].offsetWidth; // Obtém a largura dinâmica do slide
+  carousel.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  updateCarousel();
+}
+
+// Inicia a troca automática a cada 3 segundos (3000ms)
+setInterval(nextSlide, 3000);
+
+// Chama a função inicialmente para posicionar o primeiro slide
+updateCarousel();
+   </script>
+
 		<script src="js/simple-lightbox.jquery.js"></script>
 		<script>
 			$(document).ready(function(){
