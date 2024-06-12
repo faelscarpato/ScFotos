@@ -674,6 +674,23 @@ END Formbricks Surveys -->
 			   
 			</main>
 
+<script>
+// Bloqueia o clique direito
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+// Tenta bloquear o atalho de teclado para inspecionar (F12)
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'F12') {
+    event.preventDefault();
+  }
+});
+
+// Adiciona um aviso quando o usuário tenta inspecionar
+document.addEventListener('contextmenu', function() {
+  alert("Veja o código no meu Github.");
+});
+</script>
+
    <script>
                        let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
@@ -711,5 +728,3 @@ updateCarousel();
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 	</body>
 </html>
-<!--HTML-->
-<!-- Template By: LayoutFlow, URL: https://layoutflow.com/  -->
