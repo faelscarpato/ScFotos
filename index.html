@@ -83,6 +83,9 @@ END Formbricks Surveys -->
   </div>
 </div> 
 
+   <div id="voltarTopo">
+              <a href="#" id="subir"><img src="Topo.png" alt="topo.png" /></a>
+            </div>
 
 			   
 			   
@@ -852,5 +855,26 @@ updateCarousel();
 		
 		    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script>
+window.addEventListener('scroll', function() {
+  const scrollPosition = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const bodyHeight = document.body.offsetHeight;
+  const scrollThreshold = bodyHeight * 0.5; // 50% da altura da página
+
+  const voltarTopoButton = document.getElementById('voltarTopo');
+
+  if (scrollPosition >= scrollThreshold) {
+    voltarTopoButton.style.display = 'block';
+  } else {
+    voltarTopoButton.style.display = 'none';
+  }
+});
+
+
+</script>
+
+
 	</body>
 </html>
