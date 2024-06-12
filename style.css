@@ -320,6 +320,15 @@ body {
   background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent), radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent);
 }
 
+
+/* Desabilita a seleção de texto (opcional) */
+body {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10+ and Edge */
+  user-select: none; /* Standard syntax */
+}
+
+
 canvas {
   position: fixed;
   width: 100%;
