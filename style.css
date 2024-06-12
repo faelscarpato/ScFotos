@@ -361,3 +361,27 @@ canvas {
   }
 }
 
+#subir {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  z-index: 9999;
+  background-color: #00000000;
+  border-color: solid 2px #000000;
+  margin-bottom: 35px;
+  margin-left: 20px;
+  margin-right: 10px;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+}
+
+#subir img {
+  width: 50px;
+  height: 50px;
+}
+
+#voltarTopo {
+  display: none; /* Oculta o botão inicialmente */
+}
+
