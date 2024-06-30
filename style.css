@@ -240,7 +240,7 @@ a.link{
   color:gray;
   font-size:10px;
   letter-spacing:3px;
-  border-bottom:1px solid gray;
+  border-bottom:1px solid #FFC501;
 }
 
 
@@ -265,7 +265,7 @@ a.link{
     width:100%;
     height:auto;
     border-right:none;
-    border-bottom:1px solid #ddd;
+    border-bottom:1px solid #FFC501;
     font-family:'Manrope';
     padding:30px 0;
   }
@@ -280,7 +280,7 @@ a.link{
     position:relative;
     bottom:0;
     width:100%;
-    border-top:1px solid #ddd;
+    border-top:1px solid #FFC501;
     padding:30px 0;
   }
 }
@@ -339,7 +339,7 @@ canvas {
   position: relative;
   width: 100%; /* Largura total para responsividade */
   overflow: hidden;
-  padding-top: 20px ;
+  padding:auto 0px;
 }
 
 .carousel {
@@ -348,18 +348,38 @@ canvas {
 }
 
 .slide {
-  flex: 0 0 100%; /* Cada slide ocupa 100% da largura */
-  height: 600px; /* Ajuste a altura conforme necessário */
-  background-size: cover;
+  flex: 0 0 100%;
+  /* Ajustes para Responsividade */
+  max-height: 566px; /* Altura máxima em telas grandes */
+  height: 566px;       /* Altura automática para manter proporção */
+  background-size: contain;  /* Conter a imagem sem cortar */
   background-position: center;
+  background-repeat: no-repeat; /* Evitar repetição da imagem */
 }
 
 /* Estilos opcionais para responsividade em telas menores */
-@media (max-width: 768px) { 
+@media (max-width: 720px) { 
   .slide {
-    height: 400px; /* Altura menor para telas menores */
+    height: 200px ; /* Altura menor para telas menores */
+    width:1080px
   }
 }
+
+.slide video {
+  width: 100%;
+  height: auto;
+  max-height: 600px; /* Ajuste conforme necessário */
+}
+
+/* Media Query para Telas Menores */
+@media (max-width: 768px) {
+  .slide video {
+    max-height: 400px; /* Ajuste conforme necessário */
+  }
+}
+
+
+
 
 #subir {
   position: fixed;
@@ -384,4 +404,9 @@ canvas {
 #voltarTopo {
   display: none; /* Oculta o botão inicialmente */
 }
+
+
+
+
+
 
