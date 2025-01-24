@@ -64,20 +64,20 @@
   </header>
   <section class="portfoliogallery">
 
-
-
-
   <div id="voltarTopo">
-  <div class="gallery" role="region" aria-label="Galeria de fotos">
-  </div>
+    <div class="gallery" role="region" aria-label="Galeria de fotos">
       <h2 id="gallery-title">Meus Momentos</h2>
       <p id="gallery-description">Fotografias de Momentos Únicos</p>
-    <div class="headings">
-      <h2>Meus Momentos</h2>
-    <div id="galleryitems" class="galleryitems" aria-labelledby="gallery-title gallery-description"></div>
-      <p>Algumas fotografias serão melhores apreciadas no seu celular</p>
+      <div class="headings">
+        <p>Algumas fotografias serão melhores apreciadas no seu celular</p>
+      </div>
+      <div class="loading">Carregando galeria...</div>
+      <div id="galleryitems"
+           class="galleryitems"
+           role="list"
+           aria-labelledby="gallery-title gallery-description">
+      </div>
     </div>
-    <div id="galleryitems" class="galleryitems"></div> 
   </div>
 </section>
 
@@ -147,45 +147,13 @@
   window.addEventListener('scroll', function() {
    const scrollPosition = window.scrollY;
    const windowHeight = window.innerHeight;
-   const bodyHeight = document.body.offsetHeight;
-   const scrollThreshold = bodyHeight * 0.5; // 50% da altura da página
-
-   const voltarTopoButton = document.getElementById('voltarTopo');
-
-   if (scrollPosition >= scrollThreshold) {
-    voltarTopoButton.style.display = 'block';
-   } else {
-    voltarTopoButton.style.display = 'none';
+ <script src="js/script.js"></script>
    }
   });
- </script>
- 
- <script>
-  fetch('gallery.json')
-  .then(response => response.json())
-  .then(galleryItems => {
-    const galleryItemsContainer = document.getElementById('galleryitems');
+ <script type="module">
+  import { Gallery } from './js/gallery.js';
 
-    galleryItems.forEach(item => {
-        const galleryItem = `
-          <div class="item" role="listitem">
-            <div class="itemcontent">
-              <div class="overlay">
-                <a href="${item.src}"
-                   class="zoomlink"
-                   aria-label="Ampliar imagem ${item.alt}"
-                   role="button">
-                   <i class="fa-solid fa-search" aria-hidden="true"></i>
-                </a>
-              </div>
-              <img src="${item.src}"
-                   alt="${item.alt}"
-                   loading="lazy"
-                   onerror="this.onerror=null; this.src='images/error-placeholder.jpg';" />
-            </div>
-          </div>`;
-        galleryItemsContainer.insertAdjacentHTML('beforeend', galleryItem);
-    });
+  const gallery = new Gallery(document.getElementById('galleryitems'), {
 
     $('.gallery a').simpleLightbox({
       history: false,
@@ -195,12 +163,6 @@
       enableKeyboard: true,
       captionSelector: 'img',
       captionsData: 'alt'
-    });
-  })
-  .catch(error => {
-    console.error('Erro ao carregar galeria:', error);
-    document.getElementById('galleryitems').innerHTML =
-      '<p class="error">Erro ao carregar as imagens. Por favor, tente novamente mais tarde.</p>';
   });
  </script>
 </body>
