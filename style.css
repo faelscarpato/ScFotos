@@ -1,3 +1,25 @@
+/* Add loading indicator styles */
+.loading {
+  text-align: center;
+  padding: 2em;
+  color: #FFC501;
+}
+
+.loading::after {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid #FFC501;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 *{box-sizing:border-box;margin:0; padding:0;}
 ul{list-style:none;}
 a{text-decoration:none;}
@@ -76,6 +98,15 @@ header{
  
 }
 
+/* Improve error message visibility */
+.error {
+  color: #FFC501;
+  text-align: center;
+  padding: 2em;
+  border: 1px solid #FFC501;
+  border-radius: 4px;
+  margin: 1em 0;
+}
 
 
 .portfoliogallery{
@@ -167,11 +198,15 @@ header{
   background:slateblue;
 }
 .galleryitems .item img{
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
   float:left; width:100%;
   height:auto;
   aspect-ratio:1/1;
   object-fit:cover;
   object-position:center;
+}
+.galleryitems .item img.loaded {
 }
 .pagination{
   float:left;
@@ -310,6 +345,17 @@ a.link{
   .galleryitems .item .overlay a.livelink{
     padding:4px 8px;
     font-size:8px;
+  }
+}
+
+/* Improve mobile responsiveness */
+@media(max-width: 480px) {
+  .galleryitems .item {
+    flex-basis: 100%;
+  }
+
+  header {
+    padding: 15px;
   }
 }
 
